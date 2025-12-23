@@ -1,0 +1,692 @@
+{
+  "openapi": "3.0.0",
+  "paths": {
+    "/": {
+      "get": {
+        "operationId": "AppController_getHello",
+        "parameters": [],
+        "responses": { "200": { "description": "" } },
+        "tags": ["App"]
+      }
+    },
+    "/exchange-rate": {
+      "post": {
+        "operationId": "ExchangeRateController_create",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/CreateExchangeRateDto" }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateExchangeRateDto"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Create ExchangeRate",
+        "tags": ["ExchangeRate"]
+      },
+      "get": {
+        "operationId": "ExchangeRateController_findAll",
+        "parameters": [
+          {
+            "name": "page",
+            "required": false,
+            "in": "query",
+            "description": "Page number (starting from 1)",
+            "schema": { "example": 1, "type": "number" }
+          },
+          {
+            "name": "limit",
+            "required": false,
+            "in": "query",
+            "description": "Number of items per page",
+            "schema": { "example": 10, "type": "number" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateExchangeRateDtoPaginatedResponse"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Get all ExchangeRate",
+        "tags": ["ExchangeRate"]
+      },
+      "patch": {
+        "operationId": "ExchangeRateController_update",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": { "type": "number" }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/UpdateExchangeRateDto" }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateExchangeRateDto"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Update ExchangeRate by ID",
+        "tags": ["ExchangeRate"]
+      }
+    },
+    "/exchange-rate/{id}": {
+      "get": {
+        "operationId": "ExchangeRateController_findOne",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": { "type": "number" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateExchangeRateDto"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Get ExchangeRate by ID",
+        "tags": ["ExchangeRate"]
+      },
+      "delete": {
+        "operationId": "ExchangeRateController_remove",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": { "type": "number" }
+          }
+        ],
+        "responses": {
+          "200": { "description": "Entity deleted successfully." }
+        },
+        "summary": "Delete entity by ID",
+        "tags": ["ExchangeRate"]
+      }
+    },
+    "/product-type": {
+      "post": {
+        "operationId": "ProductTypeController_create",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/CreateProductTypeDto" }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateProductTypeDto"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Create ProductType",
+        "tags": ["ProductType"]
+      },
+      "get": {
+        "operationId": "ProductTypeController_findAll",
+        "parameters": [
+          {
+            "name": "page",
+            "required": false,
+            "in": "query",
+            "description": "Page number (starting from 1)",
+            "schema": { "example": 1, "type": "number" }
+          },
+          {
+            "name": "limit",
+            "required": false,
+            "in": "query",
+            "description": "Number of items per page",
+            "schema": { "example": 10, "type": "number" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateProductTypeDtoPaginatedResponse"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Get all ProductType",
+        "tags": ["ProductType"]
+      },
+      "patch": {
+        "operationId": "ProductTypeController_update",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": { "type": "number" }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/UpdateProductTypeDto" }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateProductTypeDto"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Update ProductType by ID",
+        "tags": ["ProductType"]
+      }
+    },
+    "/product-type/{id}": {
+      "get": {
+        "operationId": "ProductTypeController_findOne",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": { "type": "number" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateProductTypeDto"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Get ProductType by ID",
+        "tags": ["ProductType"]
+      },
+      "delete": {
+        "operationId": "ProductTypeController_remove",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": { "type": "number" }
+          }
+        ],
+        "responses": {
+          "200": { "description": "Entity deleted successfully." }
+        },
+        "summary": "Delete entity by ID",
+        "tags": ["ProductType"]
+      }
+    },
+    "/product-variant": {
+      "post": {
+        "operationId": "ProductVariantController_create",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateProductVariantDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateProductVariantDto"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Create ProductVariant",
+        "tags": ["ProductVariant"]
+      },
+      "get": {
+        "operationId": "ProductVariantController_findAll",
+        "parameters": [
+          {
+            "name": "page",
+            "required": false,
+            "in": "query",
+            "description": "Page number (starting from 1)",
+            "schema": { "example": 1, "type": "number" }
+          },
+          {
+            "name": "limit",
+            "required": false,
+            "in": "query",
+            "description": "Number of items per page",
+            "schema": { "example": 10, "type": "number" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateProductVariantDtoPaginatedResponse"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Get all ProductVariant",
+        "tags": ["ProductVariant"]
+      },
+      "patch": {
+        "operationId": "ProductVariantController_update",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": { "type": "number" }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateProductVariantDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateProductVariantDto"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Update ProductVariant by ID",
+        "tags": ["ProductVariant"]
+      }
+    },
+    "/product-variant/{id}": {
+      "get": {
+        "operationId": "ProductVariantController_findOne",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": { "type": "number" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateProductVariantDto"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Get ProductVariant by ID",
+        "tags": ["ProductVariant"]
+      },
+      "delete": {
+        "operationId": "ProductVariantController_remove",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": { "type": "number" }
+          }
+        ],
+        "responses": {
+          "200": { "description": "Entity deleted successfully." }
+        },
+        "summary": "Delete entity by ID",
+        "tags": ["ProductVariant"]
+      }
+    },
+    "/contact": {
+      "post": {
+        "operationId": "ContactController_create",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/CreateContactDto" }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/CreateContactDto" }
+              }
+            }
+          }
+        },
+        "summary": "Create Contact",
+        "tags": ["Contact"]
+      },
+      "get": {
+        "operationId": "ContactController_findAll",
+        "parameters": [
+          {
+            "name": "page",
+            "required": false,
+            "in": "query",
+            "description": "Page number (starting from 1)",
+            "schema": { "example": 1, "type": "number" }
+          },
+          {
+            "name": "limit",
+            "required": false,
+            "in": "query",
+            "description": "Number of items per page",
+            "schema": { "example": 10, "type": "number" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateContactDtoPaginatedResponse"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Get all Contact",
+        "tags": ["Contact"]
+      },
+      "patch": {
+        "operationId": "ContactController_update",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": { "type": "number" }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/UpdateContactDto" }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/CreateContactDto" }
+              }
+            }
+          }
+        },
+        "summary": "Update Contact by ID",
+        "tags": ["Contact"]
+      }
+    },
+    "/contact/{id}": {
+      "get": {
+        "operationId": "ContactController_findOne",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": { "type": "number" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/CreateContactDto" }
+              }
+            }
+          }
+        },
+        "summary": "Get Contact by ID",
+        "tags": ["Contact"]
+      },
+      "delete": {
+        "operationId": "ContactController_remove",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": { "type": "number" }
+          }
+        ],
+        "responses": {
+          "200": { "description": "Entity deleted successfully." }
+        },
+        "summary": "Delete entity by ID",
+        "tags": ["Contact"]
+      }
+    }
+  },
+  "info": {
+    "title": "Auth API",
+    "description": "API DOCUMENTATION",
+    "version": "1.0",
+    "contact": {}
+  },
+  "tags": [],
+  "servers": [],
+  "components": {
+    "securitySchemes": {
+      "access-token": {
+        "scheme": "bearer",
+        "bearerFormat": "JWT",
+        "type": "http"
+      }
+    },
+    "schemas": {
+      "CreateExchangeRateDto": {
+        "type": "object",
+        "properties": {
+          "rate": { "type": "number" },
+          "bank_name": { "type": "string" }
+        },
+        "required": ["rate", "bank_name"]
+      },
+      "PaginationMeta": {
+        "type": "object",
+        "properties": {
+          "total": { "type": "number" },
+          "page": { "type": "number" },
+          "limit": { "type": "number" },
+          "totalPages": { "type": "number" }
+        },
+        "required": ["total", "page", "limit", "totalPages"]
+      },
+      "CreateExchangeRateDtoPaginatedResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/CreateExchangeRateDto" }
+          },
+          "meta": { "$ref": "#/components/schemas/PaginationMeta" }
+        },
+        "required": ["data", "meta"]
+      },
+      "UpdateExchangeRateDto": {
+        "type": "object",
+        "properties": {
+          "rate": { "type": "number" },
+          "bank_name": { "type": "string" }
+        }
+      },
+      "CreateProductTypeDto": {
+        "type": "object",
+        "properties": { "name": { "type": "string" } },
+        "required": ["name"]
+      },
+      "CreateProductTypeDtoPaginatedResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/CreateProductTypeDto" }
+          },
+          "meta": { "$ref": "#/components/schemas/PaginationMeta" }
+        },
+        "required": ["data", "meta"]
+      },
+      "UpdateProductTypeDto": {
+        "type": "object",
+        "properties": { "name": { "type": "string" } }
+      },
+      "Unit": {
+        "type": "string",
+        "enum": ["PIECE", "METER", "SQUAREMETER", "KILOGRAMM"]
+      },
+      "CreateProductVariantDto": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "type": { "type": "string" },
+          "unit": { "allOf": [{ "$ref": "#/components/schemas/Unit" }] }
+        },
+        "required": ["name", "type", "unit"]
+      },
+      "CreateProductVariantDtoPaginatedResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/CreateProductVariantDto" }
+          },
+          "meta": { "$ref": "#/components/schemas/PaginationMeta" }
+        },
+        "required": ["data", "meta"]
+      },
+      "UpdateProductVariantDto": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "type": { "type": "string" },
+          "unit": { "allOf": [{ "$ref": "#/components/schemas/Unit" }] }
+        }
+      },
+      "CreateContactDto": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "phone": { "type": "string" }
+        },
+        "required": ["name", "phone"]
+      },
+      "CreateContactDtoPaginatedResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/CreateContactDto" }
+          },
+          "meta": { "$ref": "#/components/schemas/PaginationMeta" }
+        },
+        "required": ["data", "meta"]
+      },
+      "UpdateContactDto": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "phone": { "type": "string" }
+        }
+      }
+    }
+  }
+}
