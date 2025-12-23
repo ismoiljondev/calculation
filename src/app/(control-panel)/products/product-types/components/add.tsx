@@ -9,7 +9,7 @@ import { showMessage } from "@fuse/core/FuseMessage/fuseMessageSlice";
 import { queryClient } from "@/app/App";
 import useBlockerInForm from "@/hooks/useBlockerInForm";
 import { useState } from "react";
-import { CircularProgress } from "@mui/material";
+import { CircularProgress, Paper } from "@mui/material";
 import { ProductTypesFormType, productTypesSchema } from "../schema";
 import Inputs from "./Inputs";
 import {
@@ -64,34 +64,36 @@ function AddNewProductTypes() {
   }
 
   return (
-    <FormProvider {...methods}>
-      <form
-        name="addBranchForm"
-        noValidate
-        className="my-8 flex w-full flex-col justify-center"
-        onSubmit={methods.handleSubmit(onSubmit)}
-      >
-        <Inputs />
-        <Button
-          variant="contained"
-          color="secondary"
-          aria-label="Save"
-          // disabled={_.isEmpty(dirtyFields) || !isValid}
-          type="submit"
-          size="large"
-          fullWidth
-          onClick={() => console.log(methods?.formState?.errors)}
-          disabled={loading}
-          startIcon={
-            loading ? <CircularProgress size={20} color="inherit" /> : null
-          }
+    <Paper className="border p-4 rounded-lg space-y-2">
+      <FormProvider {...methods}>
+        <form
+          name="addBranchForm"
+          noValidate
+          className="my-8 flex w-full flex-col justify-center"
+          onSubmit={methods.handleSubmit(onSubmit)}
         >
-          {loading
-            ? t("loading", { ns: "general" })
-            : t("save", { ns: "general" })}
-        </Button>
-      </form>
-    </FormProvider>
+          <Inputs />
+          <Button
+            variant="contained"
+            color="secondary"
+            aria-label="Save"
+            // disabled={_.isEmpty(dirtyFields) || !isValid}
+            type="submit"
+            size="large"
+            fullWidth
+            onClick={() => console.log(methods?.formState?.errors)}
+            disabled={loading}
+            startIcon={
+              loading ? <CircularProgress size={20} color="inherit" /> : null
+            }
+          >
+            {loading
+              ? t("loading", { ns: "general" })
+              : t("save", { ns: "general" })}
+          </Button>
+        </form>
+      </FormProvider>
+    </Paper>
   );
 }
 

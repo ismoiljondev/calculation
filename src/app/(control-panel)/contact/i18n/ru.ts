@@ -6,6 +6,10 @@ const locale = {
   name: "Название",
   phone_number: "Номер телефона",
   new: "Добавить новый",
+  add_contact: "Добавить контакт",
+  edit_contact_title: "Редактировать контакт",
+  missing_phone: "Номер телефона не указан",
+  invalid_phone: "Неверный номер телефона",
 };
 
 export default locale;

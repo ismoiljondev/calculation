@@ -9,7 +9,7 @@ import { showMessage } from "@fuse/core/FuseMessage/fuseMessageSlice";
 import { queryClient } from "@/app/App";
 import { useEffect, useState } from "react";
 import useBlockerInForm from "@/hooks/useBlockerInForm";
-import { CircularProgress } from "@mui/material";
+import { CircularProgress, Paper } from "@mui/material";
 import { ProductTypesFormType, productTypesSchema } from "../schema";
 import Inputs from "./Inputs";
 import { format } from "date-fns";
@@ -80,33 +80,35 @@ function EditProductTypes() {
   }
 
   return (
-    <FormProvider {...methods}>
-      <form
-        name="editBranch"
-        noValidate
-        className="my-8 flex w-full flex-col justify-center"
-        onSubmit={methods.handleSubmit(onSubmit)}
-      >
-        <Inputs />
-        <Button
-          variant="contained"
-          color="secondary"
-          aria-label="Save"
-          type="submit"
-          size="large"
-          fullWidth
-          disabled={loading}
-          onClick={(e) => console.log(methods?.formState?.errors)}
-          startIcon={
-            loading ? <CircularProgress size={20} color="inherit" /> : null
-          }
+    <Paper className="border p-4 rounded-lg space-y-2">
+      <FormProvider {...methods}>
+        <form
+          name="editBranch"
+          noValidate
+          className="my-8 flex w-full flex-col justify-center"
+          onSubmit={methods.handleSubmit(onSubmit)}
         >
-          {loading
-            ? t("loading", { ns: "general" })
-            : t("save", { ns: "general" })}
-        </Button>
-      </form>
-    </FormProvider>
+          <Inputs />
+          <Button
+            variant="contained"
+            color="secondary"
+            aria-label="Save"
+            type="submit"
+            size="large"
+            fullWidth
+            disabled={loading}
+            onClick={(e) => console.log(methods?.formState?.errors)}
+            startIcon={
+              loading ? <CircularProgress size={20} color="inherit" /> : null
+            }
+          >
+            {loading
+              ? t("loading", { ns: "general" })
+              : t("save", { ns: "general" })}
+          </Button>
+        </form>
+      </FormProvider>
+    </Paper>
   );
 }
 

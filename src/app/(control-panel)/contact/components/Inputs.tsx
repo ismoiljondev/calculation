@@ -7,7 +7,7 @@ const Inputs = () => {
   const { t } = useTranslation("contact");
   return (
     <>
-      <div className="flex flex-col md:flex-row gap-2">
+      <div className="flex flex-col gap-2">
         <InputText key="name" label={t("name")} name="name" />
         <InputPhoneNumber name="phone" label={t("phoneNumber")} />
       </div>
